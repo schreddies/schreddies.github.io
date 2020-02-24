@@ -1,9 +1,12 @@
 #Secure by default, unsafe by you
+
 ##Disclaimer
 This post is the presentation of how to make code **UNSAFE**. Please, do not use these code snippets in your application, unless you fancy to be called in the middle of the night by SOC team.|
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+
 ##Intro
 In this small repo/blog will show you how to make modern, secure JS Frameworks, unsafe. Using purely these frameworks, we are going to end up with XSS. Following examples might be useful during code review or making a new version of DVWA, it’s up to you.
+
 ##The Overview: Brave New World of JavaScript  
 Using this marvellous blog post https://medium.com/javascript-scene/top-javascript-frameworks-and-topics-to-learn-in-2019-b4142f38df20 and followed by this awesome research https://2019.stateofjs.com/front-end-frameworks/ it’s naturally that that I’ve did research on following ones: 
 
