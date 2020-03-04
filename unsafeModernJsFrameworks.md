@@ -2,6 +2,7 @@
 
 ## Disclaimer
 |This post is the presentation of how to make code **UNSAFE**. Please, do not use these code snippets in your application, unless you fancy to have a xss|
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |Read that, for extra protection: https://owasp.org/www-community/xss-filter-evasion-cheatsheet|
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
