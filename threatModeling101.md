@@ -66,7 +66,7 @@ I was using several different approaches to diagrams, but right now I am trying 
 
  So, let’s assume that we have to create application for pizza staff in DFD level 1 done with OWASP Threat Dragon tool. 
 
- 
+ ![alt text](https://github.com/schreddies/schreddies.github.io/raw/master/Screenshot%202020-03-04%20at%2022.04.21.png)
 
 User (pizza delivery staff) can change pizza delivery status when authenticated - she/he is outside of the Trust Boundary (dashed line) - everything from there should be consider unsafe. Change (pizza) state process will take pizza state from list of possible options and save status to database and changelog. On the end will return status to the user. User is outside of the trust boundary – potentially dangerous component in diagram.  
 
