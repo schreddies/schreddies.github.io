@@ -49,7 +49,7 @@ Good starting point for me in creating your own Application Threat Modelling Che
 
 Of course, you should loosely hold to the STRIDE and all points that this methodology highlights. Even if it’s quite high level and sometimes too detached from the code and developers it’s also base level in this kind of assessment – high level, overall help.  
 
-DO IT 
+### DO IT 
 
 First things first: open questions are the only option to create good output. As moderator, you have one task – to ask open questions, that makes team, think about their solution. In ideal threat modelling, questions – “What we would like to create?”, “What possibly can go wrong?” and “How we are going to deal if something goes wrong?” – can be the only ones that need to be asked.  
 
@@ -61,7 +61,8 @@ With that, we can start creating overview drawing of the product. It shouldn’t
 
 I was using several different approaches to diagrams, but right now I am trying to keep it as simple as possible with DFD (Data Flow Diagram) – like most of the people, on first level. I’ve used to perform some Threat Modelling sessions using TAM Diagram (Technical Architecture Modelling Standard). These two are equally good in terms of accuracy, but DFD is clearer to non-technical users and widely spread in the technical part of society.  
 
-NOTE to Flows: What is not going to be covered by checklist: business flows. Of course, you can have point in your list ‘do we have good business flows that cannot be used in malicious way?’ but it’s not the point. Spend some time with the team and ask everyone how they recognize some of the flows that seem to be worrying you. Maybe these business features can be done with more secure manner. 
+|NOTE to Flows: What is not going to be covered by checklist: business flows. Of course, you can have point in your list ‘do we have good business flows that cannot be used in malicious way?’ but it’s not the point. Spend some time with the team and ask everyone how they recognize some of the flows that seem to be worrying you. Maybe these business features can be done with more secure manner.|
+|-------------|
 
  So, let’s assume that we have to create application for pizza staff in DFD level 1 done with OWASP Threat Dragon tool. 
 
@@ -73,21 +74,21 @@ Keeping your diagram simple and with that kind of detailing is essential and wil
 
 Next thing, which should be result of the previous one – you need to create list of assets, users and systems that your product communicates with. This step helps you with better understanding of product in question and also this is a perfect starting point where you can get knowledge about assets technology. So, to our example library app, here we’ve got following assets list: 
 
-Assets: 
+* Assets: 
 
-Angular JS 1.5.8 
+** Angular JS 1.5.8 
 
-Jquery 3.3.1 
+** Jquery 3.3.1 
 
-Nginx 1.10.3 
+** Nginx 1.10.3 
 
-Java 
+** Java 
 
-PostgreSQL 
+** PostgreSQL 
 
-Actors: 
+* Actors: 
 
-User – every user that have access to application 
+** User – every user that have access to application 
 
 Trust Boundaries: 
 
@@ -119,21 +120,21 @@ Lack of brute force prevention mechanism on login page – weakness of authentic
 
  
 
-Remark: Think like... You! 
+## Remark: Think like... You! 
 
 In many publications there is strong encouragement to 'Think like attacker'. It makes same sense as this: 
 
- 
+ ![alt text](https://github.com/schreddies/schreddies.github.io/raw/master/Screenshot%202020-03-04%20at%2022.04.21.png)
 
 You are not Dolp… attacker, so there are little chances to think like one. Unless you have background as penetration tester, auditor or any other security professional, then you can employ some of the thinking ‘in attacker way’ that you already have in your mind and share it with the team.  
 
 But Performing Threat Modelling, from perspective of ‘Builder’ give you the possibility of covering more topics and more precise solution to the problems. And knowledge about security can be added through checklist or questions to SEC Team.  
 
-### Future 
+## Future 
 
 Right now, I am working on opensource Threat Modelling list/ tool to make everything easier for the teams or start-ups. Or lone developers. Or Security professionals. Students. In the other words – everyone. Right now, main goal is to create database of threats that can be easily adjusted to your application. 
 
-### Outro 
+## Outro 
 
 I hope that this post will help you in some points about security in your product. Threat Modelling is one of the major points in Security Development Lifecycle – it will give you big picture of your solution in terms of security and helps you to mitigate threats in early phases. Focusing on open questions and having lively discussion during meeting is the key for performing good Threat Modelling. You don’t need to be perfect at the first time with everything, you have privilege to work with application on daily basis. Having more iterations makes sense – perform it as often as you need… Or as often as people want to have meetings with you 🙂. 
 
