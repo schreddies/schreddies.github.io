@@ -3,8 +3,9 @@
 ## Disclaimer
 |This post is the presentation of how to make code **UNSAFE**. Please, do not use these code snippets in your application, unless you fancy to have a xss|
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|Read that, for extra protection: https://owasp.org/www-community/xss-filter-evasion-cheatsheet|
 
+|Read that, for extra protection: https://owasp.org/www-community/xss-filter-evasion-cheatsheet|
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ## Intro
 In this small repo/blog will show you how to make modern, secure JS Frameworks, unsafe in nice way. Using purely these frameworks, we are going to end up with XSS. Following examples might be useful during code review or making a new version of DVWA, it’s up to you. Yes, you can find all these informations in the docs, but let's be honest - RTFM is not for everyone. 
