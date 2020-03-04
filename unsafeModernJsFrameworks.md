@@ -21,9 +21,12 @@ I am planning do something similar to others also. Stay tunned
 
 ### ReactJS
 
+Along with other possiblities of 'standard' XSS, this one using React DOM. Attribute called `dangerouslySetInnerHTML` can be used to set HTMLdirectly form REACT. `dangerously` part should suggest the user, that she/he doing something risky. In princple the DOM node will be updated with the object with key `_html`, the HTML.
+
 ```javascript
 <div dangerouslySetInnerHTML={{__html: 'Not safe at all <img src =x onerror=alert(1)>'}} />
 ```
+[Documentation](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml)
 
 ### VueJS
 
