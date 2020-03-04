@@ -7,7 +7,7 @@
 
 
 ## Intro
-In this small repo/blog will show you how to make modern, secure JS Frameworks, unsafe. Using purely these frameworks, we are going to end up with XSS. Following examples might be useful during code review or making a new version of DVWA, it’s up to you. Yes, you can find all these informations in the docs, but let's be honest - RTFM is not for everyone. 
+In this small repo/blog will show you how to make modern, secure JS Frameworks, unsafe in nice way. Using purely these frameworks, we are going to end up with XSS. Following examples might be useful during code review or making a new version of DVWA, it’s up to you. Yes, you can find all these informations in the docs, but let's be honest - RTFM is not for everyone. 
 
 
 ## The Overview: Brave New World of JavaScript  
@@ -21,24 +21,30 @@ I am planning do something similar to others also. Stay tunned
 
 ### ReactJS
 
-Along with other possiblities of 'standard' XSS, this one using React DOM. Attribute called `dangerouslySetInnerHTML` can be used to set HTMLdirectly form REACT. `dangerously` part should suggest the user, that she/he doing something risky. In princple the DOM node will be updated with the object with key `_html`, the HTML.
+Along with other possiblities of 'standard' XSS, this one using React DOM. Attribute called `dangerouslySetInnerHTML` can be used to set HTMLdirectly form REACT. `dangerously` part should suggest the user, that she/he doing something risky. In princple the DOM node will be updated with the object with key `_html`, the HTML. And yes, I've seen this in the wild, with data suppiled by user.
 
 ```javascript
-<div dangerouslySetInnerHTML={{__html: 'Not safe at all <img src =x onerror=alert(1)>'}} />
+<div dangerouslySetInnerHTML={{__html: 'Not safe at all <img src=x onerror=alert(1)>'}} />
 ```
 [Documentation](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml)
 
 ### VueJS
 
+Remember, the [Client side template injection with AnglarJS](https://portswigger.net/research/xss-without-html-client-side-template-injection-with-angularjs)? If not, go there. In Agluar 1.6, they removed whole sandbox thigh altogether, but last payload, from Sir Mario Heiderich ```{{constructor.constructor('alert(1)')()}}```. Elegant, isn't it? And right now, it works on VueJS because of template possibility and mixing clientside and serverside rendering [Great post with PoC on that](https://github.com/dotboris/vuejs-serverside-template-xss)
+
+
 ```javascript
-<a>Not great, not terrible{{constructor.constructor("alert('1')")() }}<a>
+<a>Not great, not terrible{{constructor.constructor('alert(1)')()}}<a>
 ```
-and many more
+[Documentation](https://vuejs.org/v2/guide/security.html)
 
 ### Mithril
+
+Starting from the [middle](https://mithril.js.org/trust.html#avoid-trusting-html) the `m.trust` should be avoidalbe, but if not, it can be dangerous, especially with user supplied data. Especially unsanitized data. 
 
 ```javascript
 m("div", [
     m.trust("<h1>Here's some <img src=x onerror=alert(1)></h1>")
 ])
 ```
+[Documentation](https://mithril.js.org/trust.html)
