@@ -1,21 +1,21 @@
 # Corona Virus Threat Modelling
 
 ## Intro
-Well, we are doomed. And to add that, we are having the CORONA-19 virus around. Some of you might be familiar with the Threat Modelling in it security but today I would like to make a Threat Modelling for your daily activity but with corona virus as main threat.  
+Well, we are doomed. And to add that, we are having the CORONA-19 virus around. Some of you might be familiar with the Threat Modelling in IT security but today I would like to make a Threat Modelling for your daily activity but with corona virus as main threat.  
 
 | DISCLIMER |
 | ------------- |
-| This post should NOT be treated as real measurement for preventing virus, neither it's a good representation of threat modelling of IT systems. This post reflects NONE medical value beside this by the end of the post from WHO. Treat it as mind puzzle.      | 
+| This post should NOT be treated as real measurement for preventing virus, neither it's a good representation of threat modelling of IT systems. This post reflects NONE medical value beside link to WHO. Treat it as mind puzzle.      | 
 
  ![alt text](https://github.com/schreddies/schreddies.github.io/blob/master/corona.jpg)
 
 ## Technical intro
 
-For those, not familiar with Threat Modelling: it is the structured and continuous process of identifying security threats in the software. The definition is not really precise about, what kind of processes and techniques we should use let's free solo it!  
+For those, not familiar with Threat Modelling: it is the structured and continuous process of identifying security threats in the software. The definition is not really precise about, what kind of processes and techniques we should use, so let's free solo it!  
 
 ### Story 
 
-As you are in self-quarantine mode, but eating is quite essential, you preparing to get out and go to nearest shop. Not favourite. To achieve goal of buying some pasta and tomatoes, you need to get from you flat, go thru corridor, ride elevator, walk 600m to nearest shop, buy stuff and survive on same way back.  
+As you are in self-quarantine mode, but eating is quite essential, you need to get out and go out to nearest shop. Not favourite, nearest. To achieve goal of buying some pasta and tomatoes, you need to get from you flat, go thru corridor, ride elevator, walk 600m to nearest shop, buy stuff and survive on same way back.  
 
 ### Actors 
 * You,
