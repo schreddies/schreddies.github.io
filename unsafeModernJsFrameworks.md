@@ -29,7 +29,7 @@ Along with other possiblities of 'standard' XSS, this one using React DOM. Attri
 
 ### VueJS
 
-Remember, the [Client side template injection with AnglarJS](https://portswigger.net/research/xss-without-html-client-side-template-injection-with-angularjs)? If not, go there. In Agluar 1.6, they removed whole sandbox thigh altogether, but last payload, from Sir Mario Heiderich ```{{constructor.constructor('alert(1)')()}}```. Elegant, isn't it? And right now, it works on VueJS because of template possibility and mixing clientside and serverside rendering [Great post with PoC on that](https://github.com/dotboris/vuejs-serverside-template-xss)
+Remember, the [Client side template injection with AnglarJS](https://portswigger.net/research/xss-without-html-client-side-template-injection-with-angularjs)? If not, I encourage you to do it right here, right now. In Agluar 1.6.x, they removed whole sandbox thigh altogether, but last payload, from Sir Mario Heiderich ```{{constructor.constructor('alert(1)')()}}``` should bring our attention. Elegant, isn't it? And right now, it works on VueJS because of template possibility and mixing clientside and serverside rendering [Great post with PoC on that](https://github.com/dotboris/vuejs-serverside-template-xss)
 
 
 ```javascript
