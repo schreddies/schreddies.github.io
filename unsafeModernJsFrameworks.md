@@ -29,7 +29,7 @@ Along with other possiblities of 'standard' XSS, this one using React DOM. Attri
 
 ### VueJS
 
-Remember, the [Client side template injection with AnglarJS](https://portswigger.net/research/xss-without-html-client-side-template-injection-with-angularjs)? If not, I encourage you to do it right here, right now. In Agluar 1.6.x, they removed whole sandbox thigh altogether, but last payload, from Sir Mario Heiderich ```{{constructor.constructor('alert(1)')()}}``` should bring our attention. Elegant, isn't it? And right now, it works on VueJS because of template possibility and mixing clientside and serverside rendering [Great post with PoC on that](https://github.com/dotboris/vuejs-serverside-template-xss)
+Remember, the [Client side template injection with AngularJS](https://portswigger.net/research/xss-without-html-client-side-template-injection-with-angularjs)? If not, I encourage you to do it right here, right now. In Angular 1.6.x, they removed whole sandbox thigh altogether, but last payload, from Sir Mario Heiderich ```{{constructor.constructor('alert(1)')()}}``` should bring our attention. Elegant, isn't it? And right now, it works on VueJS because of template possibility and mixing clientside and serverside rendering [Great post with PoC on that](https://github.com/dotboris/vuejs-serverside-template-xss)
 
 
 ```javascript
@@ -39,7 +39,7 @@ Remember, the [Client side template injection with AnglarJS](https://portswigger
 
 ### Mithril
 
-Starting from the [middle](https://mithril.js.org/trust.html#avoid-trusting-html) the `m.trust` should be avoidalbe, but if not, it can be dangerous, especially with user supplied data. Especially unsanitized data. 
+Starting from the [middle](https://mithril.js.org/trust.html#avoid-trusting-html) the `m.trust` should be avoidable, but if not, it can be dangerous, especially with user supplied data. Especially unsanitized data. 
 
 ```javascript
 m("div", [
