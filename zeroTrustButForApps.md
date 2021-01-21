@@ -11,3 +11,4 @@ As we know, beside the, enduser applications, some environments needs something 
 What is the difference between the user accessing the application and client (tenant) employee accessing backoffice? From perspective of the managing the multi-tenant, cloud based application - none. They could have diffrent authentication methods, for sure different 
 
 Why don't go even further, why we can have one app for them all with proper authentication and authorization 
+istio
