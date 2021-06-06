@@ -1,0 +1,4 @@
+# How to start 'security'?
+The objective of this post, is to make easier to understand: what activities are recommended to enable your start-up application security. This article is going cover main areas like secure development lifecycle, choosen tools with implementations and even how to build foundation for seperate team and standarization.  
+Disclaimer
+JUST DO IT. Doing something, not necessary perfect or even good, is still better than NOT doing. Mastr yoda wouldn't be happy, but `trying` is our best, and only, option. There is no such a thing as perfected app security. 
