@@ -1,1 +1,1 @@
-# CSRF protection: story how it was done wrong but with good effect
+# CSRF protection: how to make it wrong but it still works
