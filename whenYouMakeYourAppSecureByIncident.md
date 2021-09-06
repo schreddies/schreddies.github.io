@@ -4,12 +4,18 @@
 Let's begin with CSRF definition from owasp.org: 
 > Cross-Site Request Forgery (CSRF) is an attack that forces an end user to execute unwanted actions on a web application in which they’re currently authenticated.
 
-As this definition is clear, let's find out how the attack vector should looks like. First, victim needs be authenticated to application and enter malicious site. Underneath, mailicious app calls, through the browser, the application, where user is authenticated to. And this call change the state of the application ie. email change. And that's bad. The objective is to change 'something' rather than 'read data' - in that case, that would be more SOP exploitation. 
-### What SOP is
+As this definition is clear, let's find out how the attack vector should looks like. First, victim needs be authenticated to application and enter malicious site. Underneath, mailicious app calls, through the browser, the application, to wqhich, user is authenticated. And this call change the state of the application ie. email change, or transfer funds. And that's kind of bad. The objective is to change 'something' rather than 'read data'.
+### What SOP and CORS is
 The Same-Origin Policy (you guess, SOP), is browser mechanism that restricts how a document or script loaded by one origin can interact with a resource from another origin. Long story short, how one page can access data from other domains. Further reading: https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
 
-For us, the most important thing is: for simple request (without preflight request), POST there is only 3 values of `Content-Type` allowed:
+CORS - 
 
+For us, the most important thing is: for simple request (without preflight request), POST there is only 3 values of `Content-Type` allowed:
+* application/x-www-form-urlencoded, 
+* multipart/form-data, 
+* text/plain
+
+Other requests, made by browser from page A to page B will be preceded by 'pre-flight' CROS request - bascially `OPTIONS` method with `Access-Control-Request-Method` and `Access-Control-Request-Headers` headers 
 
 ### Random security feature
 So request looks like this:
