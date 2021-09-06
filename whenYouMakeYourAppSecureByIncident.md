@@ -1,5 +1,5 @@
-# When you make your app secure by accident 
-## Story about wierd countermeasurement for CSRF vulnerability 
+# Secure by incident and surprise 
+## Story about wierd and totally unplanned countermeasurement for CSRF vulnerability that should not work
 ### What CSRF is
 Let's begin with CSRF definition from owasp.org: 
 > Cross-Site Request Forgery (CSRF) is an attack that forces an end user to execute unwanted actions on a web application in which they’re currently authenticated.
