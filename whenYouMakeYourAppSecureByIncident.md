@@ -4,7 +4,7 @@
 Let's begin with CSRF definition from owasp.org: 
 > Cross-Site Request Forgery (CSRF) is an attack that forces an end user to execute unwanted actions on a web application in which they’re currently authenticated.
 
-As this definition is clear, let's find out how the attack vector should looks like. First, victim needs be authenticated to application and enter malicious site, probably with some kind of phishing. Underneath, mailicious app calls, through the browser, the application, to wqhich, user is authenticated. And this request, changes the state of the application ie. email change, or transfer funds. Or creates new users to internal system. Or many other options.
+As this definition is clear, let's find out how the attack vector should looks like. First, victim needs be authenticated to application and enter malicious site, probably with some kind of phishing. Underneath, mailicious app calls, through the browser, the application, to which, user is authenticated. And this request, changes the state of the application ie. email change, or transfer funds. Or creates new users to internal system. Or many other options.
 ### What SOP and CORS is
 The Same-Origin Policy, known as SOP (yes, security guys loves acronyms), is browser mechanism that restricts how a document or script loaded by one origin can interact with a resource from another origin. Long story short, how one page can access data from other domains. Further reading: https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
 
