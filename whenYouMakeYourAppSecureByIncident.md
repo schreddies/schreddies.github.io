@@ -7,6 +7,7 @@ Story of how I was stumbled, by a fairly simple non-vulnerable vulnerability.
 ## What CSRF is
 Let's begin with CSRF definition from owasp.org: 
 > Cross-Site Request Forgery (CSRF) is an attack that forces an end user to execute unwanted actions on a web application in which they’re currently authenticated.
+
 Successful attacks consist of a user entering a malicious site (phishing), while being authenticated to a vulnerable application, which is without CSRF countermeasures (no token based mitigation: random value sent through hidden fields or headers). Underneath, malicious app calls, through the browser, using browsers’ automatic cookie sending, to the application in question. And this request, changes the state of the application ie. email change, or transfer funds. Or creates new users to internal system.
 ## What SOP and CORS is
 The Same-Origin Policy, known as SOP, is a browser mechanism that restricts how a document or script loaded by one origin can interact with a resource from another origin. Long story short, how one page can access data from other domains. Further reading: https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
