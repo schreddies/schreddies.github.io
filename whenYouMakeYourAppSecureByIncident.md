@@ -63,7 +63,7 @@ Trying the same request but with SOPs' allowed `Content-Type`, i.e. we can use `
 # {
 #   "name":"csrf",
 #   "size":"c",
-#   "active":true
+#   "active":true,
 +   "trick=":"here"
 # }
 ```
