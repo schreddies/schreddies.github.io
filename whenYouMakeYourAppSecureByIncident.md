@@ -32,7 +32,11 @@ Request to, CSRF suspected, endpoint looks like this:
 # Origin: http://vulnerableapp.com
 # Referer: http://vulnerableapp.com/auth
 # 
-# {"name":"csrf","size":"c","active":true}
+# {
+#   "name":"csrf",
+#   "size":"c",
+#   "active":true
+# }
 ```
 No special countermeasures for CSRF. And the response, `201 Created` as expected. 
 
@@ -57,8 +61,12 @@ Trying the same request but with SOPs' allowed `Content-Type`, i.e. we can use `
 # Origin: http://vulnerableapp.com
 # Referer: http://vulnerableapp.com
 # 
-# {"name":"csrf","size":"c","active":true,
-+ "trick=":"here"}
+# {
+#   "name":"csrf",
+#   "size":"c",
+#   "active":true
++   "trick=":"here"
+# }
 ```
 Unfortunately, no success - 500 error. From now on, it was clear that it won't be easy- the application is responding 500 error everytime when, even slight, there is change in request. 
 
