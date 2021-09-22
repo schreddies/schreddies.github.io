@@ -45,7 +45,7 @@ CORS simple request (without preflight request) and POST request is allowed with
 Any other value for this header, made by browser from page A to page B, will be preceded by 'preflight' CORS request - `OPTIONS` method with `Access-Control-Request-Method` and `Access-Control-Request-Headers` headers.
 
 Trying the same request but with SOPs' allowed `Content-Type`, i.e. we can use `text/plain` MIME type, in that case, we need to add the `=` character to trick app to use equals sign as valid json.
-```
+```diff
 POST /new-product HTTP/2
 Host: vulnerableapp.com
 Cookie: <removed>
@@ -58,10 +58,7 @@ Content-Length: 139
 Origin: http://vulnerableapp.com
 Referer: http://vulnerableapp.com
 
-{"name":"csrf","size":"c","active":true,
-```
-```diff
-"trick=":"here"}```
+{"name":"csrf","size":"c","active":true,"trick=":"here"}```
 
 ```
 Unfortunately, no success - 500 error. From now on, it was clear that it won't be easy- the application is responding 500 error everytime when, even slight, there is change in request. 
