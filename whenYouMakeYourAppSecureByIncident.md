@@ -55,10 +55,11 @@ Trying the same request but with SOPs' allowed `Content-Type`, i.e. we can use `
 # Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
 # Accept-Language: en-US,en;q=0.5
 # Accept-Encoding: gzip, deflate
-# Content-Type: text/plain
+- Content-Type: application/json
++ Content-Type: text/plain
 # Content-Length: 139
-# Origin: http://vulnerableapp.com
-# Referer: http://vulnerableapp.com
+# Origin: http://attacker.com
+# Referer: http://attacker.com/auth
 # 
 # {
 #   "name":"csrf",
