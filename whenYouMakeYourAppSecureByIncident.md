@@ -58,7 +58,7 @@ Trying the same request but with SOPs' allowed `Content-Type`, i.e. we can use `
 # Referer: http://vulnerableapp.com
 # 
 # {"name":"csrf","size":"c","active":true,
-+"trick=":"here"}
++ "trick=":"here"}
 ```
 Unfortunately, no success - 500 error. From now on, it was clear that it won't be easy- the application is responding 500 error everytime when, even slight, there is change in request. 
 
