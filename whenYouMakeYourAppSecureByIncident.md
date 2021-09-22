@@ -86,10 +86,10 @@ However it won't. But it's worth mentioning that the CORS standard allows browse
 It should have been a walk in the park, but it wasn't. I was defeated by vulnerable applications and I cannot even complain, that's impressive. If you have any ideas, how to bypass it (and help with my sleepless nights - it haunts me), please answer here: https://security.stackexchange.com/questions/254895/secure-against-csrf-by-accident
 
 ## Sources 
-https://owasp.org/www-community/attacks/csrf
-https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
-https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
-https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-https://portswigger.net/web-security/csrf
-https://datatracker.ietf.org/doc/html/rfc2616#section-14.17
-https://www.w3.org/TR/2020/SPSD-cors-20200602/
+* https://owasp.org/www-community/attacks/csrf
+* https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+* https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
+* https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+* https://portswigger.net/web-security/csrf
+* https://datatracker.ietf.org/doc/html/rfc2616#section-14.17
+* https://www.w3.org/TR/2020/SPSD-cors-20200602/
