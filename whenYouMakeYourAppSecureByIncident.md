@@ -1,20 +1,22 @@
 # Security by incident and surprise 
-## Story about weird and totally unplanned countermeasures for CSRF vulnerability that should not work
+### Story about weird and totally unplanned countermeasures for CSRF vulnerability that should not work
 ## Intro 1
 To properly reheat your pizza: turn on stove on the middle heating option. After putting pizza on a hot skillet, heat it for a few minutes. Then, add some water drops around pizza and put the lid on top and heat for a few more minutes. Done.
 ## Proper intro
 Story of how I was stumbled, by a fairly simple non-vulnerable vulnerability. 
 ## What CSRF is
-Let's begin with CSRF definition from owasp.org: 
+Let's begin with CSRF definition from [OWASP](https://owasp.org): 
 > Cross-Site Request Forgery (CSRF) is an attack that forces an end user to execute unwanted actions on a web application in which they’re currently authenticated.
 
 Successful attacks consist of a user entering a malicious site (phishing), while being authenticated to a vulnerable application, which is without CSRF countermeasures (no token based mitigation: random value sent through hidden fields or headers). Underneath, malicious app calls, through the browser, using browsers’ automatic cookie sending, to the application in question. And this request, changes the state of the application ie. email change, or transfer funds. Or creates new users to internal system.
+| WARNING: When your GET request changes state (no judgement), CSRF is still possible |
+| --- |
 ## What SOP and CORS is
 The Same-Origin Policy, known as SOP, is a browser mechanism that restricts how a document or script loaded by one origin can interact with a resource from another origin. Long story short, how one page can access data from other domains.
 
 CORS - is a mechanism, based on http headers, which allows the server to specify which domains, other than origin, should be allowed to load resources from apps. As the CORS is not simple, and many misunderstandings and misconfigurations were done over the years (even on apps that 'should know better'), it's good to get this knowledge!
 
-From this modest introduction, the question which is probably on your mind: `Why SOP and CORS, in CSRF of POST request`? Let me explain.
+From this modest introduction, the question which is probably on your mind: `Why SOP and CORS, in CSRF of POST request`? Why data protection mechanism in state-changing attack? Let me explain.
 
 ## Things get serious, exploitation time
 Request to, CSRF suspected, endpoint looks like this:
@@ -37,7 +39,7 @@ Request to, CSRF suspected, endpoint looks like this:
 #   "active":true
 # }
 ```
-No special countermeasures for CSRF. And the response, `201 Created` as expected. 
+It is potentially perfect request: it has no countermeasures for CSRF and it make some changes by adding new product. And the response, `201 Created` as expected. 
 
 ### First attempt 
 CORS simple request (without preflight request) and POST request is allowed with three values of `Content-Type`:
