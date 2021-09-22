@@ -17,7 +17,7 @@ Further reading: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 
 
 ## Things get serious, exploitation time
-Our request looks like this:
+Request to the application looks like this:
 ```
 POST /new-product HTTP/2
 Host: vulnerableapp.com
@@ -44,7 +44,7 @@ CORS simple request (without preflight request) and POST request is allowed with
 * text/plain
 Any other value for this header, made by browser from page A to page B, will be preceded by 'preflight' CORS request - `OPTIONS` method with `Access-Control-Request-Method` and `Access-Control-Request-Headers` headers.
 
-Technically speaking we could make request, that's looks like this:
+Trying the same request but with SOPs' allowed `Content-Type`, i.e. we can use `text/plain` MIME type, in that case, we need to add the `=` character to trick app to use equals sign as valid json.
 ```
 POST /new-product HTTP/2
 Host: vulnerableapp.com
@@ -53,24 +53,23 @@ User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:91.0) Gecko/2010010
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
 Accept-Language: en-US,en;q=0.5
 Accept-Encoding: gzip, deflate
-Content-Type: application/json
+Content-Type: text/plain
 Content-Length: 139
 Origin: http://vulnerableapp.com
 Referer: http://vulnerableapp.com
 
-{"name":"csrf","size":"c","active":true}
+{"name":"csrf","size":"c","active":true,"trick=":"here"}
 
 ```
-No special countermeasures for CSRF. And the response, `201 Created` as expected. 
-Trying the same request but with SOPs' allowed `Content-Type`, i.e. we can use `text/plain` MIME type, in that case, we need to add the `=` character to trick app to use equals sign as valid json. Unfortunately, no success - 500 errors.
+Unfortunately, no success - 500 error. From now on, it was clear that it won't be easy- the application is responding 500 error everytime when, even slight, there is change in request. 
 
 ### Second
-Another option is to use XHR and 'go with the flow' of CORS. Set the header `Content-Type` with `xhr.setRequestHeader` to `application/json` and send the payload as it is. The only requirement here is to get, on the request, following response headers: 
+Another option is to use XHR and 'go with the flow' of CORS. Set the header `Content-Type` with `xhr.setRequestHeader` to `application/json` and send the payload as it is. The only prerequisites are following response headers: 
 ```
 Access-Control-Allow-Origin: https://www.attacker.com
 Access-Control-Allow-Credentials: true 
 ```
-Buuuuuuut, no, it would be too much. CORS are wide open with `Access-Control-Allow-Origin: *`, which mean, that is no `Access-Control-Allow-Credentials` header and, no credentials send to vulnerable page. And, as a result, no CSRF.
+No luck here. CORS are wide open with `Access-Control-Allow-Origin: *`, which mean, that is no `Access-Control-Allow-Credentials` header and, no credentials would be send to vulnerable page by browser. And, as a result, no CSRF.
 
 ### Third: last but least 
 > If it looks stupid but works, it isn't stupid
