@@ -1,4 +1,4 @@
-# Secure by incident and surprise 
+# Security by incident and surprise 
 ## Story about weird and totally unplanned countermeasures for CSRF vulnerability that should not work
 ## Intro 1
 To properly reheat your pizza: turn on stove on the middle heating option. After putting pizza on a hot skillet, heat it for a few minutes. Then, add some water drops around pizza and put the lid on top and heat for a few more minutes. Done.
