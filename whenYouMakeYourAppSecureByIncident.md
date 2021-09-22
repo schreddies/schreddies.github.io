@@ -78,14 +78,20 @@ Another option is to use XHR and 'go with the flow' of CORS. Set the header `Con
 # Access-Control-Allow-Origin: https://www.attacker.com
 # Access-Control-Allow-Credentials: true 
 ```
-No luck here. CORS are wide open with `Access-Control-Allow-Origin: *`, which mean, that is no `Access-Control-Allow-Credentials` header and, no credentials would be send to vulnerable page by browser. And, as a result, no CSRF.
+And as it turns out CORS are wide open, with `Access-Control-Allow-Origin: *`, which is worse in many scenarios. However in this case, no `Access-Control-Allow-Credentials` header, and as result no credentials would be send to vulnerable page by browser. And, as a result, no CSRF.
 
 ### Third: last but least 
-> If it looks stupid but works, it isn't stupid
-However it won't. But it's worth mentioning that the CORS standard allows browser, send requests with multiple values of the `Content-Type` header. And it is against the RFC2616 14.17 (HTTP 1.1). If the server would check only if the value of headers contains `application/json` that would be a victory. You should try it.
+> If it looks stupid but works, it ain't stupid
+
+However, it won't. But it's worth mentioning that the CORS standard allows browser, send requests with multiple values of the `Content-Type` header. And it is against the RFC2616 14.17 (HTTP 1.1). It's perfectly fine for browser to send header like this:
+```diff
+# Content-Type: text/plain; application/json
+#
+```
+If the server would only check if the value of headers contains `application/json` as sub-string of the value - that would be a victory.
 
 ## I LOST. Badly 
-It should have been a walk in the park, but it wasn't. I was defeated by vulnerable applications and I cannot even complain, that's impressive. If you have any ideas, how to bypass it (and help with my sleepless nights - it haunts me), please answer here: https://security.stackexchange.com/questions/254895/secure-against-csrf-by-accident
+It should have been a walk in the park, but it wasn't. I was defeated by vulnerable applications, and I cannot even complain, that's impressive. If you have any ideas, how to bypass it (and help with my sleepless nights - it haunts me), please answer here: https://security.stackexchange.com/questions/254895/secure-against-csrf-by-accident
 
 ## Sources 
 * https://owasp.org/www-community/attacks/csrf
