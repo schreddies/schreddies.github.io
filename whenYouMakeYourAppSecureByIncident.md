@@ -1,7 +1,7 @@
 # Secure by incident and surprise 
 ## Story about weird and totally unplanned countermeasures for CSRF vulnerability that should not work
 ## Intro 1
-To properly reheat your pizza: turn on stow on the middle option. After putting pizza on a hot skillet, heat it for a few minutes. Then, add some water drops around and put the lid on top and heat for a few more minutes. 
+To properly reheat your pizza: turn on stove on the middle heating option. After putting pizza on a hot skillet, heat it for a few minutes. Then, add some water drops around pizza and put the lid on top and heat for a few more minutes. Done.
 ## Proper intro
 Story of how I was stumbled, by a fairly simple non-vulnerable vulnerability. 
 ## What CSRF is
@@ -10,10 +10,9 @@ Let's begin with CSRF definition from owasp.org:
 
 Successful attacks consist of a user entering a malicious site (phishing), while being authenticated to a vulnerable application, which is without CSRF countermeasures (no token based mitigation: random value sent through hidden fields or headers). Underneath, malicious app calls, through the browser, using browsers’ automatic cookie sending, to the application in question. And this request, changes the state of the application ie. email change, or transfer funds. Or creates new users to internal system.
 ## What SOP and CORS is
-The Same-Origin Policy, known as SOP, is a browser mechanism that restricts how a document or script loaded by one origin can interact with a resource from another origin. Long story short, how one page can access data from other domains. Further reading: https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
+The Same-Origin Policy, known as SOP, is a browser mechanism that restricts how a document or script loaded by one origin can interact with a resource from another origin. Long story short, how one page can access data from other domains.
 
 CORS - is a mechanism, based on http headers, which allows the server to specify which domains, other than origin, should be allowed to load resources from apps. As the CORS is not simple, and many misunderstandings and misconfigurations were done over the years (even on apps that 'should know better'), it's good to get this knowledge!
-Further reading: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 
 From this modest introduction, the question which is probably on your mind: `Why SOP and CORS, in CSRF of POST request`? Let me explain.
 
@@ -83,5 +82,13 @@ No luck here. CORS are wide open with `Access-Control-Allow-Origin: *`, which me
 However it won't. But it's worth mentioning that the CORS standard allows browser, send requests with multiple values of the `Content-Type` header. And it is against the RFC2616 14.17 (HTTP 1.1). If the server would check only if the value of headers contains `application/json` that would be a victory. You should try it.
 
 ## I LOST. Badly 
-It should have been a walk in the park, but it wasn't. I was defeated by multiple standards and vulnerable applications and I cannot even complain, that's impressive. If you have any ideas, how to bypass it (and help with my sleepless nights becuase of this problem), please answer here: https://security.stackexchange.com/questions/254895/secure-against-csrf-by-accident
+It should have been a walk in the park, but it wasn't. I was defeated by vulnerable applications and I cannot even complain, that's impressive. If you have any ideas, how to bypass it (and help with my sleepless nights - it haunts me), please answer here: https://security.stackexchange.com/questions/254895/secure-against-csrf-by-accident
 
+## Sources 
+https://owasp.org/www-community/attacks/csrf
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
+https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+https://portswigger.net/web-security/csrf
+https://datatracker.ietf.org/doc/html/rfc2616#section-14.17
+https://www.w3.org/TR/2020/SPSD-cors-20200602/
