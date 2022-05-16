@@ -4,7 +4,7 @@
 ## Intro
 Sometime ago, I mean week, Anaconda, release the PyScript https://github.com/pyscript/pyscript. Simplifing: The Python in browser, with HTML and JavaScript. Javascript and python, in the browser,. What can possibly can go wrong. 
 
-DISCLAIMER: Since the PyScript is not intendent for big projects, the value of security might be less obvious to many people. Especially as it tend to be simplier and easier to develop, orientated towards fast development. 
+> :warning: **If you are using mobile browser**: Be very careful here!
 
 ## PyScript XSS
 Let's check how it works:
