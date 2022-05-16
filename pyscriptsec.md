@@ -4,7 +4,7 @@
 ## Intro
 Sometime ago, I mean week, Anaconda, release the PyScript https://github.com/pyscript/pyscript. Simplifing: The Python in browser, with HTML and JavaScript. Javascript and python, in the browser,. What can possibly can go wrong. 
 
-> :warning: **If you are using mobile browser**: Be very careful here!
+> :info: It's fun post, pyscript is great idea, but as everything, security should be some concern. 
 
 ## PyScript XSS
 Let's check how it works:
@@ -26,6 +26,7 @@ test.py
 print('as<img src=x onerror=alert(1)>df')
 ```
 and here we are, with XSS. 
+ ![asdf](https://github.com/schreddies/schreddies.github.io/blob/master/Screenshot%202022-05-16%20at%2013.14.25.png)
 
 ## Outro
-Make no mistake, The PyScript, is brilliant product!
+Make no mistake, The PyScript, is brilliant product! Just don't forget about security. 
