@@ -4,5 +4,5 @@ metadata:
   name: my-my-plugin-component
 spec:
   lifecycle: production
-  owner: 'asdf"><img src=x onerror=alert(1)>'
+  owner: asdf
   type: service
