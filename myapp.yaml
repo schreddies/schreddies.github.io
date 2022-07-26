@@ -2,6 +2,8 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: my-my-plugin-component
+  annotations:
+    my-plugin/bucket-name: my-bucket
 spec:
   lifecycle: production
   owner: asdf
