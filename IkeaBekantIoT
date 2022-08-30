@@ -1,0 +1,15 @@
+Hi,
+During pandemic I've bought myself a gift: Ikea Bekant. Purchase was made to enchance 'working from home' expirience barable. Aaaand here we are - 2,5 years working like that. Why Bekant? No idea, probably it was available at that time and my wif... I like white colour. 
+
+The only downside was requirement to press one of two buttons for whole time, during changing height. Add to that lack of defined positions and you have easy recipe for DIY project. 
+
+First thought, after quick look at the desk frame, was to remove pilot and put microcontroller instead to communicate directly with desk. But as I was lacking oscilioscope and any tools (my parents basement have it all) I needed some simpler solution. Emulate the buttons! The pilot inside looks like this, so there is no problem with operating each button using GPIO as separate, with 'safety pin' conncted directly to GND.
+
+As my Raspberry Pi zero was overkill (and cold dead), I've picked the old (7 years old) esp32 devkit. I've planned to do my master thesis using it, but... The conection is dead simple - three cables from 'pilot', esp32, microusb cable, no fancy LEDs, no custom, neither mechanical switches (for now). 
+
+Thanks to my friend, Piotr, I've used the tasmota software, to integrate it with my not-so-smart home setup. 
+
+Initial version has only to toggle switches in tasmota interface, the next iteration was operated throught siri throught homesmart system :)
+
+SAFETY
+As the securiy engineer I was aware of all, potenitall, security issues - and I am still now. But far more concerning me is the safety - for now there is no safety system to limit the crashing power of desk, going down on something, or someone under the desk. And in case of Rise of the Machines I am doomed. 
