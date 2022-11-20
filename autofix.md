@@ -13,3 +13,6 @@ Let's start with some simple cases:
 ```
 sed 's+http://+https://+g' test.sh
 ```
+
+
+```sed '/sys.exit/! s+exit+sys.exit+g' sys_exit.py```
