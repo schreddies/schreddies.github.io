@@ -6,8 +6,8 @@ Qoute:
 
 We do have simeple `test.sh` file:
 ```
-curl http://internal.eks-asdf.zooz.co/asdf
-curl https://internal.eks-asdf.zooz.co/asdf
+curl http://internal.eks-asdf.com/asdf
+curl https://internal.eks-asdf.com/asdf
 ```
 Let's start with some simple cases:
 ```
